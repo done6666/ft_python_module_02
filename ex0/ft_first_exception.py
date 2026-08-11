@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+def input_temperature(temp_str: str) -> int:
+    return int(temp_str)
+
+
+def test_temperature() -> None:
+    print("=== Garden Temperature ===")
+    for value in ("25", "abc", "100", "-50"):
+        print()
+        print(f"Input data is '{value}'")
+        try:
+            temperature: int = input_temperature(value)
+        except Exception as error:
+            print(f"Caught input_temperature error: {error}")
+        else:
+            print(f"Temperature is now {temperature}°C")
+    print()
+    print("All tests completed - program didn't crash!")
+
+
+if __name__ == "__main__":
+    test_temperature()
